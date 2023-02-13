@@ -18,17 +18,19 @@ function crearEsudante() {
   ) {
     alert("Diligencie todos los datos");
   } else {
+    const promedio = (nota1 + nota2 + nota3) / 3;
     const nuevoObjeto = {
       nombre:nombre,
       curso:curso,
       genero:genero,
       nota1:nota1, 
       nota2:nota2, 
-      nota3:nota3
+      nota3:nota3,
+      promedio:promedio,
     }
     estudiante.push(nuevoObjeto)
 
-    const promedio = (nota1 + nota2 + nota3) / 3;
+    
     if (promedio >= 3.5 && promedio <= 5) {
       const resultado = "aprobado";
       tabla.innerHTML += `
@@ -72,3 +74,26 @@ localStorage.setItem('estudiante',JSON.stringify(estudiante))
 function reset() {
   location.reload();
 }
+
+const consultar = document.querySelector('#consultar')
+
+consultar.addEventListener('click',(e)=>{
+  e.preventDefault()
+  const data = JSON.parse(localStorage.getItem('estudiante'))
+ 
+console.log(data)
+data.forEach(valor =>{
+  tabla.innerHTML += `
+        <td>${valor.nombre}</td>
+        <td>${valor.genero}</td>
+        <td>${valor.curso}</td>
+        <td>${valor.nota1}</td>
+        <td>${valor.nota2}</td>
+        <td>${valor.nota3}</td>
+        <td>${valor.promedio}</td>
+        <td id ="resultado" >${valor.resultado}</td>
+
+  `
+})
+ 
+})
