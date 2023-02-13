@@ -1,4 +1,4 @@
-const estudiante = {};
+const estudiante = [];
 
 function crearEsudante() {
   const nombre = document.getElementById("nombre").value;
@@ -18,12 +18,14 @@ function crearEsudante() {
   ) {
     alert("Diligencie todos los datos");
   } else {
-    estudiante.nombre = nombre;
-    estudiante.curso = curso;
-    estudiante.genero = genero;
-    estudiante.nota1 = nota1;
-    estudiante.nota2 = nota2;
-    estudiante.nota3 = nota3;
+    const nuevoObjeto = {
+      nombre:nombre,
+      curso:curso,
+      genero:genero,
+      nota1:nota1, 
+      nota2:nota2, 
+      nota3:nota3
+    }
 
     const promedio = (nota1 + nota2 + nota3) / 3;
     if (promedio >= 3.5 && promedio <= 5) {
@@ -39,7 +41,6 @@ function crearEsudante() {
         <td id = "resultado2">${resultado}</td>
   
         `
-      localStorage.setItem(JSON.stringify(estudiante));
     } else if (promedio < 3.5 && promedio >= 0) {
       const resultado = "Reprobado";
       tabla.innerHTML += `
@@ -64,8 +65,7 @@ const crear = document.querySelector("#crear");
 crear.addEventListener("click", (e) => {
   e.preventDefault();
   crearEsudante();
-const estudianteObjeto = JSON.stringify(estudiante)
-localStorage.setItem(estdianteObeto)
+localStorage.setItem('estudiante',JSON.stringify(estudiante))
 });
 
 function reset() {
