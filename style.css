@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: rgba(128, 128, 128, 0.651);
+  margin: auto;
+  width: 100%;
+  border-radius: 5px;
+  text-align: center;
+  color: black;
+  border: none;
+  padding: 30px;
+}
+
+body > div > h1 {
+  width: 80%;
+  height: 100px;
+  /* border: solid 1px black; */
+  text-align: center;
+  margin: auto;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.container form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  width: 15%;
+  text-align: end;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.container input {
+  border: none;
+  outline: none;
+  width: 200px;
+  /* border: solid 1px rgba(70, 13, 70, 0.959); */
+  border-radius: 5px;
+  height: 30px;
+}
+
+.container input:hover {
+  box-shadow: 0 1px 6px 0 #07194e93;
+}
+
+#crear {
+  border: none;
+  background-color: rgb(32, 139, 32);
+  color: black;
+  height: 40px;
+  width: 70px;
+  border-radius: 5px;
+}
+
+form img {
+  width: 300px;
+  height: 300px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+td {
+  text-align: center;
+  border: solid 1px rgb(22, 1, 22);
+}
+table th {
+  border: solid 1px rgb(22, 1, 22);
+  background-color: gray;
+}
+
+#resultado {
+  background-color: red;
+}
+#resultado2 {
+  background-color: green;
+}
+
+#genero {
+  border: none;
+  outline: none;
+  width: 200px;
+  /* border: solid 1px rgba(70, 13, 70, 0.959); */
+  border-radius: 5px;
+  height: 30px;
+}
