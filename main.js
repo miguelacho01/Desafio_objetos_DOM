@@ -38,7 +38,8 @@ function crearEsudante() {
         <td>${promedio}</td>
         <td id = "resultado2">${resultado}</td>
   
-        `;
+        `
+      localStorage.setItem(JSON.stringify(estudiante));
     } else if (promedio < 3.5 && promedio >= 0) {
       const resultado = "Reprobado";
       tabla.innerHTML += `
