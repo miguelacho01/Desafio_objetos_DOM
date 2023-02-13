@@ -64,6 +64,8 @@ const crear = document.querySelector("#crear");
 crear.addEventListener("click", (e) => {
   e.preventDefault();
   crearEsudante();
+const estudianteObjeto = JSON.stringify(estudiante)
+localStorage.setItem(estdianteObeto)
 });
 
 function reset() {
